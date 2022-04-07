@@ -10,62 +10,62 @@ let health=100;
 let gold=0;
 
 let monsters=["Goblin","Demon","Troll","Zombie","Ratling","Kobold","Golem","Ghoul"]
-
-let player=modernFontColor("A","Red")
-let ex=modernFontColor("E","Brown")
+let wall=modernFontColor("X","Black")
+let player=modernFontColor("@","Red")
+let ex=modernFontColor("E","Purple")
 let heal=modernFontColor("H","Blue")
 
- let dungeonMap= [["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
-                  ["X","H","O","O","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","X","O","O","H","X"],
-                  ["X","O","O","O","X","X","X","X","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","O","O","O","X"],
-                  ["X","O","@","O","X","O","O","O","O","X","O","O","O","O","O","X","O","O","O","H","O","X","O","O","O","O","O","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","O","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","O","O","O","H","O","O","X","O","O","O","O","O","X","X","X","X","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","X","O","O","O","O","O","X","X","X","X","O","X","X","X","O","O","O","X","O","H","O","X"],
-                  ["X","O","O","O","X","H","O","O","O","X","O","O","O","O","O","X","H","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","X","O","X","X","X","O","X","X","X","O","O","O","O","O","X","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","X","O","O","O","O","O","O","O","O","O","O","O","O","O","X","O","O","O","X","O","H","O","X"],
-                  ["X","O","O","O","X","O","H","O","X","O","O","O","H","O","O","X","O","O","O","O","O","O","X","O","O","O","X","X","X","X","X"],
-                  ["X","O","O","O","X","O","O","O","X","O","O","O","O","O","O","X","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","X","X","X","X","O","O","O","O","O","O","X","O","O","O","H","O","O","X","O","O","O","O","O","H","O","X"],
-                  ["X","H","O","O","X","O","O","O","X","X","X","X","X","X","X","X","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","O","O","O","O","O","O","O","O","O","H","O","O","O","X","X","X","X","X","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","X","X","X","X","X","X","O","O","O","O","O","O","O","X","O","O","O","X","H","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","X","X","X","X","X","X","X","X","O","H","O","X","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","X","X","X","X","X"],
-                  ["X","O","O","O","O","O","H","O","O","X","O","O","O","H","O","X","O","O","O","O","O","X","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","X","X","X","X","X","X","O","X","X","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","O","X","O","X","O","X","O","X","O","O","O","O","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","X","X","O","X","O","O","O","X","H","O","O","O","O","O","O","O","O","O","O","O","X"],
-                  ["X","H","O","X","O","O","O","O","O","O","O","O","O","X","O","O","O","X","O","O","O","O","O","O","O","O","X","O","O","E","X"],
-                  ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"]]
+ let dungeonMap= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
+                  [wall,"H","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","H",wall],
+                  [wall,"O","O","O",wall,wall,wall,wall,"O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O",wall],
+                  [wall,"O","@","O",wall,"O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","H","O",wall,"O","O","O","O","O","O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","H","O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,"O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,"O",wall,wall,wall,"O","O","O",wall,"O","H","O",wall],
+                  [wall,"O","O","O",wall,"H","O","O","O",wall,"O","O","O","O","O",wall,"H","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,wall,"O",wall,wall,wall,"O",wall,wall,wall,"O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","H","O",wall],
+                  [wall,"O","O","O",wall,"O","H","O",wall,"O","O","O","H","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,wall,wall,wall,wall],
+                  [wall,"O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O","H","O","O",wall,"O","O","O","O","O","H","O",wall],
+                  [wall,"H","O","O",wall,"O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O","O","O","O","O","O","O","O","O","O","H","O","O","O",wall,wall,wall,wall,wall,wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O","O",wall,"O","O","O",wall,"H","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,wall,"O","H","O",wall,"O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,wall,wall,wall,wall],
+                  [wall,"O","O","O","O","O","H","O","O",wall,"O","O","O","H","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O",wall,wall,wall,wall,wall,wall,"O",wall,wall,wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,"O",wall,"O",wall,"O",wall,"O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,"O",wall,"O","O","O",wall,"H","O","O","O","O","O","O","O","O","O","O","O",wall],
+                  [wall,"H","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","E",wall],
+                  [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
- let playerMap=  [["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"],
-                  ["X","O","O","O","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","X","X","X","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","O","O","O","X"],
-                  ["X","O","P","O","X","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","O","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","O","O","O","O","O","O","X","O","O","O","O","O","X","X","X","X","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","X","O","O","O","O","O","X","X","X","X","O","X","X","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","X","O","X","X","X","O","X","X","X","O","O","O","O","O","X","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","X","O","O","O","O","O","O","O","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","X","O","O","O","O","O","O","X","O","O","O","O","O","O","X","O","O","O","X","X","X","X","X"],
-                  ["X","O","O","O","X","O","O","O","X","O","O","O","O","O","O","X","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","X","X","X","X","O","O","O","O","O","O","X","O","O","O","O","O","O","X","O","O","O","O","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","X","X","X","X","X","X","X","X","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","X","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","X","X","X","X","X","X","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","X","X","X","X","X","X","O","O","O","O","O","O","O","X","O","O","O","X","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","X","X","X","X","X","X","X","X","O","O","O","X","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","X","X","X","X","X"],
-                  ["X","O","O","O","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","O","O","O","O","O","X","O","X","X","X","X","X","X","O","X","X","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","O","X","O","X","O","X","O","X","O","O","O","O","O","O","O","O","X","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","X","X","X","O","X","O","O","O","X","O","O","O","O","O","O","O","O","O","O","O","O","X"],
-                  ["X","O","O","X","O","O","O","O","O","O","O","O","O","X","O","O","O","X","O","O","O","O","O","O","O","O","X","O","O",ex,"X"],
-                  ["X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X","X"]]
+ let playerMap=  [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
+                  [wall,"O","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,wall,wall,wall,"O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O",wall],
+                  [wall,"O","P","O",wall,"O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,"O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,"O",wall,wall,wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,wall,"O",wall,wall,wall,"O",wall,wall,wall,"O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,wall,wall,wall,wall],
+                  [wall,"O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",wall,wall,wall,wall,wall,wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,wall,"O","O","O",wall,"O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,wall,wall,wall,wall],
+                  [wall,"O","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O",wall,wall,wall,wall,wall,wall,"O",wall,wall,wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,"O",wall,"O",wall,"O",wall,"O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,"O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O",ex,wall],
+                  [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
 let mapChoice=dungeonMap;
 
@@ -122,8 +122,8 @@ function clickHandler(dir)  {
 
         position=mapChoice[y][x];      // convert the dungeon map y and x to gather dungeon maps information   
 
-        if (position=="X"){
-            playerMap[y][x] = "X";
+        if (position==wall){
+            playerMap[y][x] = wall;
             x= previousX
             y= previousY
             info.innerHTML=("You walk into a wall")
