@@ -168,7 +168,7 @@ function clickHandler(dir)  {
             let event=Dice(6);
             if (event>4){
 
-                let damage=Dice(6)+4;
+                let damage=Dice(6)+5;
                 health=health-damage;
                 let randomMonster;
                 randomMonster= monsters[Math.floor(Math.random() * monsters.length)];
