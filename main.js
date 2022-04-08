@@ -133,9 +133,9 @@ function clickHandler(dir)  {
             playerMap[y][x] = heal;
             x= previousX
             y= previousY
-            if (health<90){
+            if (health<80){
 
-                health=90;
+                health=80;
                 info.innerHTML=("You find a fountain of healing, you recover most of your health. Your health is "+health);
             }
             else{
