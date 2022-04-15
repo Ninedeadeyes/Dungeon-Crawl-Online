@@ -4,13 +4,31 @@ body{
 }
 
 div{
-    position:absolute;     
+    position:absolute;  
+    font-family: monospace;
+  
 }
+
+button{
+    display: flex;
+    justify-content: space-around;
+    width: 50px;
+    height: 45px;
+    background-color: rgb(78, 213, 236);
+    border-style: solid;   
+    border-color:black;
+    font-weight: bold;
+    text-align: low;
+    padding-top: 25%;
+    border-radius: 30%;
+}
+
 
 #interface{
     margin:auto;
     width: 486px;
     height:530px;
+    
     
     position:relative;
 }
@@ -20,7 +38,6 @@ div{
     color: white;
     border-style: solid;   
     border-color:black;  
-    font-family:monospace; 
 }
 
 #control{
@@ -28,16 +45,7 @@ div{
     
 }
 
-.button-div{
-    display: flex;
-    justify-content: space-around;
-    width: 50px;
-    height: 40px;
-    background-color: blue;
-    border-style: solid;   
-    border-color:black; 
-    font-family:monospace;
-}
+
 
 #info{
     background-color:white;
@@ -46,12 +54,13 @@ div{
     border-style: solid;   
     border-color:black; 
     text-align: center; 
-    font-family:monospace;
+    border-radius: 2%;
 }
 
 #north{
     top:60px;
     left:200px;
+   
 }
 
 #east{
