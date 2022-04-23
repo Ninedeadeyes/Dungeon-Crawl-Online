@@ -236,7 +236,6 @@ function clickHandler(dir)  {
 
         }
 
-        
         if (position=="O"){
 
             let event=Dice(6);
@@ -263,7 +262,7 @@ function clickHandler(dir)  {
                 }
                
                 if (health<=0){
-                    info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
+                    info.innerHTML=("A "+randomMonster+ " delivers a deadly strike. </br>Wounds upon wounds you fall to the ground. (GAME OVER)");
                     game=false;
                 }
             }
