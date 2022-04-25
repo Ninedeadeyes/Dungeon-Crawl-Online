@@ -26,10 +26,8 @@ button{
 
 #interface{
     margin:auto;
-    width: 486px;
+    width: 480px;
     height:530px;
-    
-    
     position:relative;
 }
 
@@ -46,9 +44,10 @@ button{
 }
 
 #info{
-    top:0px;
+    top:380px;
     background-color:white;
-    width:440px;
+    margin:auto;
+    width: 437px;
     height:70px;
     border-style: solid;   
     border-color:black; 
