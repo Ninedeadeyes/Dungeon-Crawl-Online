@@ -37,20 +37,19 @@ button{
     background-color:white;
     color: white;
     border-style: solid;   
-    border-color:black;  
+    border-color:black; 
+    margin-bottom: 0cm;
 }
 
 #control{
-    top:440px;  
-    
+    top:400px;    /* has both info and controls */
 }
 
-
-
 #info{
+    top:0px;
     background-color:white;
     width:440px;
-    height:50px;
+    height:70px;
     border-style: solid;   
     border-color:black; 
     text-align: center; 
@@ -58,27 +57,27 @@ button{
 }
 
 #north{
-    top:60px;
+    top:80px;
     left:200px;
    
 }
 
 #east{
-    top:100px;
+    top:120px;
     left:260px;
 }
 
 #south{
-    top:140px;
+    top:160px;
     left:200px;
 }
 
 #west{
-    top:100px;
+    top:120px;
     left:140px;
 }
 
 #music{
-    top:190px;
+    top:210px;
     left:80px;
 }
