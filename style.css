@@ -34,6 +34,7 @@ button{
 #screen{
     background-color:white;
     color: white;
+    width: 437px;
     border-style: solid;   
     border-color:black; 
     margin-bottom: 0cm;
