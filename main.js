@@ -24,7 +24,7 @@ let chest=modernFontColor("C","Orange")
 let mon=modernFontColor("M","Brown")
 let kni=modernFontColor("K","Grey")
 
- let dungeonMap= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
+ let dungeonMap1= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
                   [wall,"H","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","H",wall],
                   [wall,"O","O","O",wall,wall,wall,wall,"O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O",wall],
                   [wall,"O","O","O",wall,"M","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","H","O",wall,"O","O","O","O","O","O","O","O",wall],
@@ -50,7 +50,7 @@ let kni=modernFontColor("K","Grey")
                   [wall,"H","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","E",wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
- let playerMap=  [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
+ let playerMap1=  [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
                   [wall,"O","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O","O",wall,wall,wall,wall,"O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O",wall],
                   [wall,"O","@","O",wall,mys,"O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O",wall],
@@ -76,7 +76,8 @@ let kni=modernFontColor("K","Grey")
                   [wall,"O","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O",ex,wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
-let mapChoice=dungeonMap;
+let mapChoice=dungeonMap1;
+let playerMapChoice=playerMap1;
 
 let position=mapChoice[y][x];
 
@@ -87,7 +88,7 @@ function modernFontColor(str, color) {
 
 function clearScreen(){
     screen.innerHTML=" ";
-    displayMaps(playerMap);
+    displayMaps(playerMapChoice);
 }
 
 function Dice(side){
@@ -111,7 +112,7 @@ function clickHandler(dir)  {
         info.innerHTML=" " ;      //clear screen for info
         let previousX=x;          //  in case you hit into a wall
         let previousY=y;
-        playerMap[y][x] = "O";   // so you don't leave a trail of 'p' 
+        playerMapChoice[y][x] = "O";   // so you don't leave a trail of 'p' 
         
         if (dir==1){
             y--;
@@ -132,14 +133,14 @@ function clickHandler(dir)  {
         position=mapChoice[y][x];      // convert the dungeon map y and x to gather dungeon maps information   
 
         if (position==wall){
-            playerMap[y][x] = wall;
+            playerMapChoice[y][x] = wall;
             x= previousX
             y= previousY
             info.innerHTML=("You walk into a wall.")
         }
 
         if (position=="G"){
-            playerMap[y][x] = gob;
+            playerMapChoice[y][x] = gob;
             x= previousX
             y= previousY
             if (exitKey==false){
@@ -153,7 +154,7 @@ function clickHandler(dir)  {
         }
 
         if (position=="M"){
-            playerMap[y][x] = mon;
+            playerMapChoice[y][x] = mon;
             x= previousX
             y= previousY
             info.innerHTML=("You see a holy monk.. He provide you with some help. </br>")
@@ -164,7 +165,7 @@ function clickHandler(dir)  {
 
 
         if (position=="K"){
-            playerMap[y][x] = kni;
+            playerMapChoice[y][x] = kni;
             x= previousX
             y= previousY
             if (sword==false){
@@ -178,7 +179,7 @@ function clickHandler(dir)  {
         }
 
         if (position=="H"){
-            playerMap[y][x] = heal;
+            playerMapChoice[y][x] = heal;
             x= previousX
             y= previousY
             if (health<90){
@@ -193,7 +194,7 @@ function clickHandler(dir)  {
         }
 
         if (position=="E"){
-            playerMap[y][x] = ex;
+            playerMapChoice[y][x] = ex;
             x= previousX
             y= previousY
 
@@ -219,10 +220,26 @@ function clickHandler(dir)  {
                 game=false;
 
             }
+
+
         }
 
+
+        /*  instead of ending game you can add another level with below code example 
+
+                if (position=="E"){
+                    info.innerHTML=("going through a door");
+                    mapChoice=dungeonMap2;
+                    playerMapChoice=playerMap2;
+                    x=4;
+                    y=3;
+
+                }
+
+        */ 
+
         if (position=="C"){
-            playerMap[y][x] = chest;
+            playerMapChoice[y][x] = chest;
             x= previousX
             y= previousY
             if (treasure==false){
@@ -236,6 +253,7 @@ function clickHandler(dir)  {
 
         }
 
+        
         if (position=="O"){
 
             let event=Dice(6);
@@ -262,7 +280,7 @@ function clickHandler(dir)  {
                 }
                
                 if (health<=0){
-                    info.innerHTML=("A "+randomMonster+ " delivers a deadly strike. </br>Wounds upon wounds you fall to the ground. (GAME OVER)");
+                    info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
                     game=false;
                 }
             }
