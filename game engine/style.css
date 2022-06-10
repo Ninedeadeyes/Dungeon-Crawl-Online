@@ -1,5 +1,7 @@
 div{
     position:absolute;
+    font-family: monospace;
+    font-size: 15px;
 }
 
 #screen{
