@@ -143,13 +143,27 @@ function clickHandler(dir)  {
             playerMapChoice[y][x] = gob;
             x= previousX
             y= previousY
-            if (exitKey==false){
-                info.innerHTML=("You see a sleeping Goblin  with a key on him. You take the key.");
-                exitKey=true;
+
+            let goblinQuestion=window.confirm("You see a sleeping Goblin, do you investigate ?");
+
+            if (goblinQuestion==true){
+                if (exitKey==false){    
+
+                    info.innerHTML=("You find a key on him. You steal the key. ") 
+                    exitKey=true;
+                } 
+
+                else{
+                info.innerHTML=("You find nothing of interest.") 
+
+                }
             }
+
             else{
-                info.innerHTML=("You see a sleeping Goblin, don't wake him up !! ");
+                info.innerHTML=("You decide not the disturb the Goblin. He might wake up !! ") 
+
             }
+
 
         }
 
@@ -168,12 +182,25 @@ function clickHandler(dir)  {
             playerMapChoice[y][x] = kni;
             x= previousX
             y= previousY
-            if (sword==false){
-                info.innerHTML=("You see the corpse of a Knight. You take the Knight's holy sword. ");
-                sword=true;
+
+            let knightQuestion=window.confirm("You see the corpse of a Knight, do you investigate ?");
+
+            if (knightQuestion==true){
+                if (sword==false){    
+
+                    info.innerHTML=("You find a holy sword. ") 
+                    sword=true;
+                } 
+
+                else{
+                info.innerHTML=("You have already ransacked his corpse, shame !! ") 
+
+                }
             }
+
             else{
-                info.innerHTML=("You see the corpse of a Knight, how sorrowful.. ");
+                info.innerHTML=(" You let the dead sleep.") 
+
             }
 
         }
@@ -206,15 +233,15 @@ function clickHandler(dir)  {
 
                 info.innerHTML=("You find the exit. You looted "+gold+" Gold from the dungeon. ");
 
-                if (gold>1200){
-                    info.innerHTML+=("Wow..That is a lot of loot.You are an awesome Dungeon Crawler !!")
+                if (gold>1500){
+                    info.innerHTML+=("Wow..That is a lot of loot.You are an awesome dungeon crawler !!")
                 }
-                else if (gold>500 & gold <1200){
-                    info.innerHTML+=("You did fairly well for a newbie :P")
+                else if (gold>700 & gold <1500){
+                    info.innerHTML+=("You did fairly well for a newbie :P You can do better !! ")
                 }
 
                 else{
-                    info.innerHTML+=("Wow..You were lucky to leave the dungeon alive. Maybe try fishing instead? ")
+                    info.innerHTML+=("Wow.. You were lucky to leave the dungeon alive. Maybe try fishing instead? ")
                 }
 
                 game=false;
@@ -242,13 +269,28 @@ function clickHandler(dir)  {
             playerMapChoice[y][x] = chest;
             x= previousX
             y= previousY
-            if (treasure==false){
-                gold=gold+700;
-                info.innerHTML=("You see a treasure chest, you find 700 Gold !! You have "+gold+" gold.");
-                treasure=true;
+
+
+            let chestQuestion=window.confirm("Do you want to open the chest?");
+
+            if (chestQuestion==true){
+                    if (treasure==false){    
+
+                        info.innerHTML=("You open the chest. ") 
+                        info.innerHTML+=("You gain 800 gold !!")
+                        gold=gold+800;
+                        treasure=true;
+                    } 
+
+                    else{
+                    info.innerHTML=("You have already opened the chest.") 
+
+                    }
             }
+
             else{
-                info.innerHTML=("You see an empty treasure chest.");
+                info.innerHTML=("You leave the chest alone. ") 
+
             }
 
         }
@@ -280,6 +322,7 @@ function clickHandler(dir)  {
                 }
                
                 if (health<=0){
+                    info.innerHTML=("A "+randomMonster+" delivers a deadly blow ")
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
                     game=false;
                 }
