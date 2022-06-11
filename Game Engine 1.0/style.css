@@ -1,0 +1,80 @@
+
+body{
+    background-color:grey;
+}
+
+div{
+    position:absolute;  
+    font-family: monospace;
+  
+}
+
+button{
+    display: flex;
+    justify-content: space-around;
+    width: 50px;
+    height: 45px;
+    background-color:lightgrey;
+    border-style: solid;   
+    border-color:black;
+    font-weight: bold;
+    text-align: low;
+    padding-top: 25%;
+    border-radius: 30%;
+}
+
+
+
+#interface{
+    margin:auto;
+    width: 486px;
+    height:530px;
+    
+    
+    position:relative;
+}
+
+#screen{
+    background-color:white;
+    color: black;
+    border-style: solid;   
+    border-color:black; 
+    border-radius: 3%;
+}
+
+#control{
+    top:150px;  
+    
+}
+
+
+#info{
+    background-color:white;
+    width:370.53px;
+    height:120px;
+    border-style: solid;   
+    border-color:black; 
+    text-align: center; 
+    border-radius: 3%;
+}
+
+#north{
+    top:140px;
+    left:160px;
+   
+}
+
+#east{
+    top:180px;
+    left:220px;
+}
+
+#south{
+    top:220px;
+    left:160px;
+}
+
+#west{
+    top:180px;
+    left:100px;
+}
