@@ -16,13 +16,17 @@ let damage;
 let monsters=["Goblin","Demon","Troll","Zombie","Ratling","Kobold","Golem","Ghoul"]
 let wall=modernFontColor("X","Black")
 let player=modernFontColor("@","Red")
-let ex=modernFontColor("E","Purple")
+let door=modernFontColor("D","Purple")
 let heal=modernFontColor("H","Blue")
 let mys=modernFontColor("?","Brown")
 let gob=modernFontColor("G","Green")
 let chest=modernFontColor("C","Orange")
 let mon=modernFontColor("M","Brown")
 let kni=modernFontColor("K","Grey")
+let exit=modernFontColor("E","Red")
+let hid=modernFontColor("T","Orange")
+
+
 
  let dungeonMap1= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
                   [wall,"H","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","H",wall],
@@ -41,13 +45,13 @@ let kni=modernFontColor("K","Grey")
                   [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O","O","O","O","O","O","O","O","O","O","O","H","O","O","O",wall,wall,wall,wall,wall,wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O","O",wall,"O","O","C",wall,"O","O","O","O",wall,"O","O","O",wall],
-                  [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,wall,"O","H","O",wall,"O","O","O","O",wall,"O","O","G",wall],
+                  [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,wall,"O","H","O","O","O","O","O","O",wall,"O","O","G",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,wall,wall,wall,wall],
                   [wall,"O","O","O","O","O","H","O","O",wall,"O","O","O","H","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O",wall,wall,wall,wall,wall,wall,"O",wall,wall,wall,"O","O","O",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,"O",wall,"O",wall,"O",wall,"O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,"O",wall,"O","O","O",wall,"H","O","O","O","O","O","O","O","O","O","O","O",wall],
-                  [wall,"H","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","E",wall],
+                  [wall,"H","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","D",wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
  let playerMap1=  [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
@@ -73,8 +77,64 @@ let kni=modernFontColor("K","Grey")
                   [wall,"O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O",wall,wall,wall,wall,wall,wall,"O",wall,wall,wall,"O","O","O",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,"O",wall,"O",wall,"O",wall,"O",wall,"O","O","O","O","O","O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,"O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O",wall],
-                  [wall,"O","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O",ex,wall],
+                  [wall,"O","O",wall,"O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O","O","O",wall,"O","O",door,wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
+
+let dungeonMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","T","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,"Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","E",wall],
+                  [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
+
+
+let playerMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,wall,wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,wall,wall,"Q",wall,wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall],
+                  [wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",exit,wall],
+                  [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
+
+
+
 
 let mapChoice=dungeonMap1;
 let playerMapChoice=playerMap1;
@@ -144,23 +204,24 @@ function clickHandler(dir)  {
             x= previousX
             y= previousY
 
-            let goblinQuestion=window.confirm("You see a sleeping Goblin, do you investigate ?");
+            let goblinQuestion=window.confirm("You see a sleeping Goblin. Do you wake him up ?");
 
             if (goblinQuestion==true){
                 if (exitKey==false){    
 
-                    info.innerHTML=("You find a key on him. You steal the key. ") 
+                    info.innerHTML=("He seems to be in a deep sleep but ") 
+                    info.innerHTML+=("you find a key on him. You steal the key. ") 
                     exitKey=true;
                 } 
 
                 else{
-                info.innerHTML=("You find nothing of interest.") 
+                    info.innerHTML=("he seems to be in a deep sleep.") 
 
                 }
             }
 
             else{
-                info.innerHTML=("You decide not the disturb the Goblin. He might wake up !! ") 
+                info.innerHTML=("You decide not the disturb the Goblin. ") 
 
             }
 
@@ -171,8 +232,9 @@ function clickHandler(dir)  {
             playerMapChoice[y][x] = mon;
             x= previousX
             y= previousY
-            info.innerHTML=("You see a holy monk.. He provide you with some help. </br>")
-            info.innerHTML+=("'There are healing fountains scatter across the dungeon, use them or you won't survive.'");
+            info.innerHTML=("You see a holy monk.. He provide you with some help.  </br>")
+            info.innerHTML+=("'There are healing fountains scatter across the dungeon, use them or you won't survive. ");
+            info.innerHTML+=("I will give you a tip to find some. Search the corners of the dungeon.'");
         }
 
 
@@ -183,7 +245,7 @@ function clickHandler(dir)  {
             x= previousX
             y= previousY
 
-            let knightQuestion=window.confirm("You see the corpse of a Knight, do you investigate ?");
+            let knightQuestion=window.confirm("You see the corpse of a Knight. Do you investigate ?");
 
             if (knightQuestion==true){
                 if (sword==false){    
@@ -220,8 +282,8 @@ function clickHandler(dir)  {
 
         }
 
-        if (position=="E"){
-            playerMapChoice[y][x] = ex;
+        if (position=="D"){
+            playerMapChoice[y][x] = door ;
             x= previousX
             y= previousY
 
@@ -230,40 +292,80 @@ function clickHandler(dir)  {
             }
             
             else{
-
-                info.innerHTML=("You find the exit. You looted "+gold+" Gold from the dungeon. ");
-
-                if (gold>1500){
-                    info.innerHTML+=("Wow..That is a lot of loot.You are an awesome dungeon crawler !!")
-                }
-                else if (gold>700 & gold <1500){
-                    info.innerHTML+=("You did fairly well for a newbie :P You can do better !! ")
-                }
-
-                else{
-                    info.innerHTML+=("Wow.. You were lucky to leave the dungeon alive. Maybe try fishing instead? ")
-                }
-
-                game=false;
+                info.innerHTML=("You go through the door. Your heart is filled with dread as you see how far away the exit is. Can you get out alive !! ");
+                mapChoice=dungeonMap2;
+                playerMapChoice=playerMap2;
+                x=4;
+                y=3;
 
             }
 
 
         }
 
+        if (position=="E"){
+            playerMapChoice[y][x] = exit ;
+            x= previousX
+            y= previousY
 
-        /*  instead of ending game you can add another level with below code example 
+            info.innerHTML=("At last you find the exit. You looted "+gold+" Gold from the dungeon. ");
 
-                if (position=="E"){
-                    info.innerHTML=("going through a door");
-                    mapChoice=dungeonMap2;
-                    playerMapChoice=playerMap2;
-                    x=4;
-                    y=3;
+            if (gold>1500){
+                info.innerHTML+=("Wow..That is a lot of loot.You are an awesome dungeon crawler !!")
+            }
+            else if (gold>700 & gold <1500){
+                info.innerHTML+=("You did fairly well for a newbie :P You can do better !! ")
+            }
 
+            else{
+                info.innerHTML+=("Wow.. You were lucky to leave the dungeon alive. Maybe try fishing instead? ")
+            }
+
+            game=false;
+
+        }
+
+        if (position=="Q"){
+            let exitEvent=Dice(6);
+            if(exitEvent==1){
+                info.innerHTML=("You are nearly there !! Is that a Dragon behind you ? ")
+            }
+
+            else if(exitEvent==2){
+                info.innerHTML=("You see something in the shadows, you feel a bad premonition ahead. You could not die now... ")
                 }
 
-        */ 
+            else if(exitEvent==3){
+                info.innerHTML=("A few more steps now and you can finally go home. You hear the chattering of goblins, your hope is fleeting.")
+                }
+
+            else if(exitEvent==4){
+                info.innerHTML=("You wonder where did the boss go ? They are usually at the end of the dungeon.")
+                }
+
+            else if(exitEvent==5){
+                    info.innerHTML=("You are bleeding quite bad, can you stand another fight ?? You miss your family.  ")
+                    }
+
+            else{
+
+                info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask.  ")
+
+            }
+        }   
+
+
+        
+        if (position=="T"){
+            playerMapChoice[y][x] =hid;
+            x= previousX
+            y= previousY
+            gold=gold+100;
+            info.innerHTML=("You found the mythical fountain of gold !! It seems everlasting !! ");
+            info.innerHTML+=("You gain 100 gold !! You have "+gold+" gold.")
+           
+        }
+
 
         if (position=="C"){
             playerMapChoice[y][x] = chest;
@@ -271,14 +373,13 @@ function clickHandler(dir)  {
             y= previousY
 
 
-            let chestQuestion=window.confirm("Do you want to open the chest?");
+            let chestQuestion=window.confirm("You see a chest. Do you want to open it ?");
 
             if (chestQuestion==true){
                     if (treasure==false){    
-
-                        info.innerHTML=("You open the chest. ") 
-                        info.innerHTML+=("You gain 800 gold !!")
                         gold=gold+800;
+                        info.innerHTML=("You open the chest. ") 
+                        info.innerHTML+=("You gain 800 gold !! You have "+gold+" gold.")
                         treasure=true;
                     } 
 
