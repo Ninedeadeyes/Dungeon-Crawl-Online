@@ -86,24 +86,24 @@ let dungeonMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,w
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,"Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","O","Q",wall,"Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","E",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","H","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","E",wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
 
@@ -173,7 +173,7 @@ function clickHandler(dir)  {
         let previousX=x;          //  in case you hit into a wall
         let previousY=y;
         playerMapChoice[y][x] = "O";   // so you don't leave a trail of 'p' 
-        
+
         if (dir==1){
             y--;
         }
@@ -215,7 +215,7 @@ function clickHandler(dir)  {
                 } 
 
                 else{
-                    info.innerHTML=("he seems to be in a deep sleep.") 
+                    info.innerHTML=("You have already taken his key, leave him to slumber. ") 
 
                 }
             }
@@ -328,28 +328,28 @@ function clickHandler(dir)  {
         if (position=="Q"){
             let exitEvent=Dice(6);
             if(exitEvent==1){
-                info.innerHTML=("You are nearly there !! Is that a Dragon behind you ? ")
+                info.innerHTML=("You are nearly there !! Is that a Dragon behind you ? Your health is "+health+".</br> ")
             }
 
             else if(exitEvent==2){
-                info.innerHTML=("You see something in the shadows, you feel a bad premonition ahead. You could not die now... ")
+                info.innerHTML=("You see something in the shadows, you feel a bad premonition ahead. You could not die now... Your health is "+health+".</br> ")
                 }
 
             else if(exitEvent==3){
-                info.innerHTML=("A few more steps now and you can finally go home. You hear the chattering of goblins, your hope is fleeting.")
+                info.innerHTML=("A few more steps now and you can finally go home. You hear the chattering of goblins, your hope is fleeting. Your health is "+health+".</br> ")
                 }
 
             else if(exitEvent==4){
-                info.innerHTML=("You wonder where did the boss go ? They are usually at the end of the dungeon.")
+                info.innerHTML=("You wonder where did the boss go ? They are usually at the end of the dungeon. Your health is "+health+".</br> ")
                 }
 
             else if(exitEvent==5){
-                    info.innerHTML=("You are bleeding quite bad, can you stand another fight ?? You miss your family.  ")
+                    info.innerHTML=("You are bleeding quite bad, can you stand another fight ?? You miss your family. Your health is "+health+".</br> ")
                     }
 
             else{
 
-                info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask.  ")
+                info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask. Your health is "+health+".</br> ")
 
             }
         }   
@@ -402,10 +402,10 @@ function clickHandler(dir)  {
             let event=Dice(6);
             if (event>4){
                 if (sword==false){
-                     damage=Dice(10)+4;
+                     damage=Dice(10)+2;
                 }
                 else{
-                    damage=Dice(7)+2;
+                    damage=Dice(7)+1;
                 }
                 health=health-damage;
                 let randomMonster;
