@@ -18,7 +18,7 @@ div{
 .headContainer{
     display:flex;
     position : fixed;   /*stays in the same place even if the page is scrolled */
-    background-color:rgb(195, 228, 236);/* rgb(173, 228, 223); */
+    background-color:rgb(29, 37, 37);/* rgb(173, 228, 223); */
     justify-content: center;   /*set the alignment of primary axis (x) */ 
     height: 80px;
     align-items:center;    /*set the alignment of secondary axis (y) */ 
@@ -29,7 +29,7 @@ div{
 }
 
 .headTitle{
-    color: black;
+    color: whitesmoke;
     font-size: 30px;
     font-family:CustomFont;
 }
@@ -58,8 +58,8 @@ button{
 }
 
 #screen{
-    background-color:white;
-    color: white;
+    background-color:White;
+    color: White;
     border-style: solid;   
     border-color:black; 
     margin-bottom: 0cm;
