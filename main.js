@@ -88,18 +88,18 @@ let dungeonMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,w
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","W","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q","W","O","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","O","Q","W","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","O","Q","Q","W","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q","W","O","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","W",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","W","T",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","O","Q","W","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","W",wall],
+                  [wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","O","Q","Q","W","Q","Q","Q","Q",wall,"W","T","W","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","W","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","Q","Q","Q",wall],
                   [wall,"W","T","W","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q",wall],
                   [wall,"Q","W","Q","Q","Q","Q","Q","Q","W","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,"Q","Q","W","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","W","T","W",wall,"W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","W","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","W","Q","O","Q","Q","Q","Q","W","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","W","Q","Q",wall,"Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"W","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q",wall,"T","W","Q",wall],
@@ -293,6 +293,7 @@ function clickHandler(dir)  {
             
             else{
                 info.innerHTML=("You go through the door. Your heart is filled with dread as you see how far away the exit is. Can you get out alive !! ");
+                info.innerHTML+=("THERE ARE POWERFUL TRAPS SCATTER ACROSS THIS DUNGEON, WATCH OUT FOR THE WARNING SIGNS !! ");
                 mapChoice=dungeonMap2;
                 playerMapChoice=playerMap2;
                 x=4;
@@ -364,11 +365,11 @@ function clickHandler(dir)  {
         if (position=="T"){
 
             let event=Dice(6);
-            if (event>2){
-                damage=Dice(12)+4;
+            if (event>1){
+                damage=Dice(12)+6;
                 health=health-damage;
 
-                info.innerHTML=(" Watch out !! Its a trap !! You fell into the trap.  Your health is "+health+" .</br>");
+                info.innerHTML=(" Watch out !! Its a trap !! You fell into the trap, you lose "+damage+" health. Your health is "+health+" .</br>");
 
                 if (health<=0){
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
