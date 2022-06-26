@@ -24,7 +24,7 @@ let chest=modernFontColor("C","Orange")
 let mon=modernFontColor("M","Brown")
 let kni=modernFontColor("K","Grey")
 let exit=modernFontColor("E","Red")
-let hid=modernFontColor("T","Orange")
+let hid=modernFontColor("F","Orange")
 
 
 
@@ -81,29 +81,29 @@ let hid=modernFontColor("T","Orange")
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
 let dungeonMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
-                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","T","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","F","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","W","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,wall,wall,wall,wall,"Q","Q","Q","Q","Q","W","O","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","O","Q","W","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","O","Q","Q","W","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,"Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","O","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","H","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","E",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","W","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,"Q","Q","W","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","W","T","W",wall,"W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","W","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","W","Q","O","Q","Q","Q","Q","W","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
+                  [wall,"Q","Q","H","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","E",wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
 
@@ -354,9 +354,36 @@ function clickHandler(dir)  {
             }
         }   
 
+        if (position=="W"){
+
+            info.innerHTML=("You sense a trap nearby, be careful !!! Your health is "+health+" . ")
+            }
+           
+
+
+        if (position=="T"){
+
+            let event=Dice(6);
+            if (event>2){
+                damage=Dice(10)+2;
+                health=health-damage;
+
+                info.innerHTML=(" Watch out !! Its a trap !! You fell into the trap.  Your health is "+health+" .</br>");
+
+                if (health<=0){
+                    info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
+                    game=false;
+                }
+            }
+
+            else{
+                info.innerHTML+=(" Watch out !! Its a trap !! You manage to evade the trap.");
+            } 
+        }
+
 
         
-        if (position=="T"){
+        if (position=="F"){
             playerMapChoice[y][x] =hid;
             x= previousX
             y= previousY
@@ -441,8 +468,8 @@ function clickHandler(dir)  {
 
     }
     
-}
 
+}
 clearScreen();  // intiate the screen at the start 
 info.innerHTML=("Defeat Monsters, collect gold and escape the dungeon.</br> Turn on the music and let the struggle begin..");
 
