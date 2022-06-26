@@ -39,7 +39,7 @@ button{
     justify-content: space-around;
     width: 50px;
     height: 45px;
-    background-color: rgb(78, 213, 236);
+    background-color: lightgray;
     border-style: solid;   
     border-color:black;
     font-weight: bold;
