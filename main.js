@@ -81,9 +81,9 @@ let hid=modernFontColor("F","Orange")
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
 let dungeonMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
-                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","F","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q","Q","F","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","O","Q","Q","Q","W","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q",wall],
@@ -94,16 +94,16 @@ let dungeonMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,w
                   [wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","O","Q","Q","W","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","Q","W","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,"Q","Q","W","Q","Q","Q",wall],
+                  [wall,"Q","W","Q","Q","Q","Q","Q","O","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","Q","Q","Q",wall],
+                  [wall,"W","T","W","Q","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,wall,"Q","Q","Q",wall,"Q","Q","Q","Q","Q","W","T","W","Q","Q",wall],
+                  [wall,"Q","W","Q","Q","Q","Q","Q","Q","W","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q",wall,wall,wall,wall,"Q","Q","W","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","W","T","W",wall,"W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","W","Q",wall,"Q","W","Q","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q","W","Q","O","Q","Q","Q","Q","W","Q","Q",wall,"Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q",wall,"Q","Q","Q",wall],
-                  [wall,"Q","Q","H","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","E",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"W","Q","Q",wall],
+                  [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q",wall,"T","W","Q",wall],
+                  [wall,"Q","Q","H","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"W","Q","E",wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
 
@@ -365,7 +365,7 @@ function clickHandler(dir)  {
 
             let event=Dice(6);
             if (event>2){
-                damage=Dice(10)+2;
+                damage=Dice(12)+4;
                 health=health-damage;
 
                 info.innerHTML=(" Watch out !! Its a trap !! You fell into the trap.  Your health is "+health+" .</br>");
