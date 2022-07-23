@@ -148,7 +148,6 @@ function clearScreen(){
 function Dice(side){
 let result=Math.floor(Math.random()*side)+1;
     return result;
-
 }
 
 function displayMaps(maps){
@@ -161,7 +160,6 @@ function displayMaps(maps){
 
 function clickHandler(dir)  {
     if (game==true){
-            
         info.innerHTML=" " ;      //clear screen for info
         let previousX=x;          //  in case you hit into a wall
         let previousY=y;
@@ -209,13 +207,11 @@ function clickHandler(dir)  {
 
                 else{
                     info.innerHTML=("You have already taken his key, leave him to slumber. ") 
-
                 }
             }
 
             else{
                 info.innerHTML=("You decide not the disturb the Goblin. ") 
-
             }         
         }
 
@@ -244,13 +240,11 @@ function clickHandler(dir)  {
 
                 else{
                 info.innerHTML=("You have already ransacked his corpse, shame !! ") 
-
                 }
             }
 
             else{
                 info.innerHTML=(" You let the dead sleep.") 
-
             }
         }
 
@@ -285,7 +279,6 @@ function clickHandler(dir)  {
                 playerMapChoice=playerMap2;
                 x=4;
                 y=3;
-
             }
         }
 
@@ -308,7 +301,6 @@ function clickHandler(dir)  {
             }
 
             game=false;
-
         }
 
         if (position=="Q"){
@@ -336,7 +328,6 @@ function clickHandler(dir)  {
             else{
 
                 info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask. Your health is "+health+".</br> ")
-
             }
         }   
 
@@ -372,7 +363,6 @@ function clickHandler(dir)  {
             gold=gold+100;
             info.innerHTML=("You found the mythical fountain of gold !! It seems everlasting !! ");
             info.innerHTML+=("You gain 100 gold !! You have "+gold+" gold.")
-           
         }
 
         if (position=="C"){
@@ -391,13 +381,11 @@ function clickHandler(dir)  {
 
                     else{
                     info.innerHTML=("You have already opened the chest.") 
-
                     }
             }
 
             else{
                 info.innerHTML=("You leave the chest alone. ") 
-
             }
         }
         
@@ -446,4 +434,3 @@ function clickHandler(dir)  {
 
 clearScreen();  // intiate the screen at the start 
 info.innerHTML=("Defeat Monsters, collect gold and escape the dungeon.</br> Turn on the music and let the struggle begin..");
-
