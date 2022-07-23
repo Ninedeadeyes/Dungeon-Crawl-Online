@@ -26,8 +26,6 @@ let kni=modernFontColor("K","Grey")
 let exit=modernFontColor("E","Red")
 let hid=modernFontColor("F","Orange")
 
-
-
  let dungeonMap1= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
                   [wall,"H","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","H",wall],
                   [wall,"O","O","O",wall,wall,wall,wall,"O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O","O","O","O",wall],
@@ -133,12 +131,8 @@ let playerMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wa
                   [wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",exit,wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
 
-
-
-
 let mapChoice=dungeonMap1;
 let playerMapChoice=playerMap1;
-
 let position=mapChoice[y][x];
 
 // Functions 
@@ -166,7 +160,6 @@ function displayMaps(maps){
 }
 
 function clickHandler(dir)  {
-
     if (game==true){
             
         info.innerHTML=" " ;      //clear screen for info
@@ -223,9 +216,7 @@ function clickHandler(dir)  {
             else{
                 info.innerHTML=("You decide not the disturb the Goblin. ") 
 
-            }
-
-
+            }         
         }
 
         if (position=="M"){
@@ -236,9 +227,6 @@ function clickHandler(dir)  {
             info.innerHTML+=("'There are healing fountains scatter across the dungeon, use them or you won't survive. ");
             info.innerHTML+=("I will give you a tip to find some. Search the corners of the dungeon.'");
         }
-
-
-
 
         if (position=="K"){
             playerMapChoice[y][x] = kni;
@@ -264,7 +252,6 @@ function clickHandler(dir)  {
                 info.innerHTML=(" You let the dead sleep.") 
 
             }
-
         }
 
         if (position=="H"){
@@ -300,8 +287,6 @@ function clickHandler(dir)  {
                 y=3;
 
             }
-
-
         }
 
         if (position=="E"){
@@ -360,8 +345,6 @@ function clickHandler(dir)  {
             info.innerHTML=("You sense a trap nearby, be careful !!! Your health is "+health+" . ")
             }
            
-
-
         if (position=="T"){
 
             let event=Dice(6);
@@ -382,8 +365,6 @@ function clickHandler(dir)  {
             } 
         }
 
-
-        
         if (position=="F"){
             playerMapChoice[y][x] =hid;
             x= previousX
@@ -394,15 +375,12 @@ function clickHandler(dir)  {
            
         }
 
-
         if (position=="C"){
             playerMapChoice[y][x] = chest;
             x= previousX
             y= previousY
-
-
             let chestQuestion=window.confirm("You see a chest. Do you want to open it ?");
-
+         
             if (chestQuestion==true){
                     if (treasure==false){    
                         gold=gold+800;
@@ -421,24 +399,22 @@ function clickHandler(dir)  {
                 info.innerHTML=("You leave the chest alone. ") 
 
             }
-
         }
-
         
         if (position=="O"){
-
             let event=Dice(6);
             if (event>4){
                 if (sword==false){
                      damage=Dice(10)+2;
                 }
+             
                 else{
                     damage=Dice(7)+1;
                 }
+             
                 health=health-damage;
                 let randomMonster;
                 randomMonster= monsters[Math.floor(Math.random() * monsters.length)];
-
                 info.innerHTML=("A "+randomMonster+" attack you, you lose "+damage+" health. Your health is "+health+" .</br>");
                 info.innerHTML+=("You slay the "+randomMonster);
 
@@ -464,13 +440,10 @@ function clickHandler(dir)  {
             } 
         }
 
-    
        clearScreen();
-
     }
-    
-
 }
+
 clearScreen();  // intiate the screen at the start 
 info.innerHTML=("Defeat Monsters, collect gold and escape the dungeon.</br> Turn on the music and let the struggle begin..");
 
