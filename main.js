@@ -1,18 +1,15 @@
 let screen=document.querySelector("#screen");
 let info=document.querySelector("#info");
 let control=document.querySelector("#control");
-
-game=true;
+let game=true;
 let x=2;
 let y=3;
-
 let health=100;
 let gold=0;
 let treasure=false;
 let exitKey=false;
 let sword=false;
 let damage;
-
 let monsters=["Goblin","Demon","Troll","Zombie","Ratling","Kobold","Golem","Ghoul"]
 let wall=modernFontColor("X","Black")
 let player=modernFontColor("@","Red")
@@ -103,7 +100,6 @@ let dungeonMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,w
                   [wall,"Q","Q","Q","Q","Q","Q","Q","W","Q","Q","Q","W","Q","Q","Q","Q","Q","Q","Q","Q","O","Q","Q","Q","Q",wall,"T","W","Q",wall],
                   [wall,"Q","Q","H","Q","Q","Q","Q","Q","Q","Q","W","T","W","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"W","Q","E",wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
-
 
 let playerMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
                   [wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
