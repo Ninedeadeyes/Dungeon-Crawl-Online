@@ -288,7 +288,7 @@ function clickHandler(dir)  {
             if (gold>1500){
                 info.innerHTML+=("Wow..That is a lot of loot.You are an awesome dungeon crawler !!")
             }
-            else if (gold>700 & gold <1500){
+            else if (gold>700 && gold <1500){
                 info.innerHTML+=("You did fairly well for a newbie :P You can do better !! ")
             }
 
