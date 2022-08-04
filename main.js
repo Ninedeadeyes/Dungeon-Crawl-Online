@@ -215,8 +215,8 @@ function clickHandler(dir)  {
             playerMapChoice[y][x] = mon;
             x= previousX
             y= previousY
-            info.innerHTML=("You see a holy monk.. He provide you with some help.  </br>")
-            info.innerHTML+=("'There are healing fountains scatter across the dungeon, use them or you won't survive. ");
+            info.innerHTML=("You see a holy monk.. He provide you with some help")
+            info.innerHTML+=(". 'There are healing fountains scatter across the dungeon, use them or you won't survive. ");
             info.innerHTML+=("I will give you a tip to find some. Search the corners of the dungeon.'");
         }
 
