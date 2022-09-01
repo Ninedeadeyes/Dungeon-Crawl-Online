@@ -336,7 +336,7 @@ function clickHandler(dir)  {
 
             let event=Dice(6);
             if (event>1){
-                damage=Dice(12)+6;
+                damage=Dice(12)+12;
                 health=health-damage;
 
                 info.innerHTML=(" Watch out !! Its a trap !! You fell into the trap, you lose "+damage+" health. Your health is "+health+" .</br>");
