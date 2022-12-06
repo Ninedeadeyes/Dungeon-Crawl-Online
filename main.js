@@ -11,6 +11,7 @@ let exitKey=false;
 let sword=false;
 let damage;
 let monsters=["Goblin","Demon","Troll","Zombie","Ratling","Kobold","Golem","Ghoul"]
+let modernFontColor=(str,color)=> '<span style="color: ' + color + '">' + str + '</span>';
 let wall=modernFontColor("X","Black")
 let player=modernFontColor("@","Red")
 let door=modernFontColor("D","Purple")
@@ -126,56 +127,37 @@ let playerMap2= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wa
                   [wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",wall],
                   [wall,"Q","Q","Q","Q",wall,"Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q","Q",exit,wall],
                   [wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall]]
-
+                  
 let mapChoice=dungeonMap1;
 let playerMapChoice=playerMap1;
 let position=mapChoice[y][x];
 
-// Functions 
-function modernFontColor(str, color) {
-    return '<span style="color: ' + color + '">' + str + '</span>';
-}
-
-function clearScreen(){
+let clearScreen=()=>{
     screen.innerHTML=" ";
     displayMaps(playerMapChoice);
 }
 
-function Dice(side){
-let result=Math.floor(Math.random()*side)+1;
-    return result;
-}
+let Dice=side=>Math.floor(Math.random()*side)+1;
 
-function displayMaps(maps){
-    for (let i=0; i<25;i++){
+let displayMaps=(maps)=>{
+
+    for (let i=0; i<mapChoice.length;i++){
         screen.innerHTML+=(maps[i]+"</br>");
-        
         maps[y][x] = player;   // to pinpoint player on the map 
     }
 }
 
-function clickHandler(dir)  {
+let clickHandler=(dir)=> {
     if (game==true){
         info.innerHTML=" " ;      //clear screen for info
         let previousX=x;          //  in case you hit into a wall
         let previousY=y;
         playerMapChoice[y][x] = "O";   // so you don't leave a trail of 'p' 
 
-        if (dir==1){
-            y--;
-        }
-
-        if (dir==2){
-            x++;
-        }
-
-        if (dir==3){
-            y++;
-        }
-
-        if (dir==4){
-            x--;
-        }
+        dir===1 ? y--: 
+        dir===2 ? x++:
+        dir==3 ? y++:
+        dir==4 && (x--);
 
         position=mapChoice[y][x];      // convert the dungeon map y and x to gather dungeon maps information   
 
@@ -228,6 +210,7 @@ function clickHandler(dir)  {
             let knightQuestion=window.confirm("You see the corpse of a Knight. Do you investigate ?");
 
             if (knightQuestion==true){
+
                 if (sword==false){    
 
                     info.innerHTML=("You find a holy sword. ") 
@@ -244,6 +227,7 @@ function clickHandler(dir)  {
             }
         }
 
+
         if (position=="H"){
             playerMapChoice[y][x] = heal;
             x= previousX
@@ -251,12 +235,11 @@ function clickHandler(dir)  {
             if (health<90){
 
                 health=90;
-                info.innerHTML=("You find a fountain of healing, you recover most of your health. Your health is "+health +" .");
+                info.innerHTML=(`You find a fountain of healing, you recover most of your health. Your health is ${health} .`);
             }
             else{
-                info.innerHTML=("You find a fountain of healing but you feel fine. Your health is "+health+" .");
+                info.innerHTML=(`You find a fountain of healing but you feel fine. Your health is ${health}.`);
             }
-
         }
 
         if (position=="D"){
@@ -283,53 +266,29 @@ function clickHandler(dir)  {
             x= previousX
             y= previousY
 
-            info.innerHTML=("At last you find the exit. You looted "+gold+" Gold from the dungeon. ");
-
-            if (gold>1500){
-                info.innerHTML+=("Wow..That is a lot of loot.You are an awesome dungeon crawler !!")
-            }
-            else if (gold>700 && gold <1500){
-                info.innerHTML+=("You did fairly well for a newbie :P You can do better !! ")
-            }
-
-            else{
-                info.innerHTML+=("Wow.. You were lucky to leave the dungeon alive. Maybe try fishing instead? ")
-            }
-
+            info.innerHTML=(`At last you find the exit. You looted ${gold} Gold from the dungeon.`);
+            gold>=1500 ? info.innerHTML+=("Wow..That is a lot of loot.You are an awesome dungeon crawler !!"):
+            gold>700 && gold <1500 ? info.innerHTML+=("You did fairly well for a newbie :P You can do better !! "):
+            gold<=700 &&  (info.innerHTML+=("Wow.. You were lucky to leave the dungeon alive. Maybe try fishing instead? "));
             game=false;
         }
 
         if (position=="Q"){
             let exitEvent=Dice(6);
-            if(exitEvent==1){
-                info.innerHTML=("You are nearly there !! Is that a Dragon behind you ? Your health is "+health+".</br> ")
-            }
 
-            else if(exitEvent==2){
-                info.innerHTML=("You see something in the shadows, you feel a bad premonition ahead. You could not die now... Your health is "+health+".</br> ")
-                }
-
-            else if(exitEvent==3){
-                info.innerHTML=("A few more steps now and you can finally go home. You hear the chattering of goblins, your hope is fleeting. Your health is "+health+".</br> ")
-                }
-
-            else if(exitEvent==4){
-                info.innerHTML=("You wonder where did the boss go ? They are usually at the end of the dungeon. Your health is "+health+".</br> ")
-                }
-
-            else if(exitEvent==5){
-                    info.innerHTML=("You are bleeding quite bad, can you stand another fight ?? You miss your family. Your health is "+health+".</br> ")
-                    }
-
-            else{
-
-                info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask. Your health is "+health+".</br> ")
-            }
+            exitEvent=== 1 ?  info.innerHTML=("You are nearly there !! Is that a Dragon behind you ? "):
+            exitEvent=== 2 ?  info.innerHTML=("You see something in the shadows, you feel a bad premonition ahead. You could not die now..."):
+            exitEvent=== 3 ?  info.innerHTML=("A few more steps now and you can finally go home. You hear the chattering of goblins, your hope is fleeting."):
+            exitEvent=== 4 ?  info.innerHTML=("You wonder where did the boss go ? They are usually at the end of the dungeon. "):
+            exitEvent=== 5 ?  info.innerHTML=("You are bleeding quite bad, can you stand another fight ?? You miss your family."):
+            exitEvent=== 6 && (info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask."));
+            info.innerHTML+=`Your health is ${health}..</br>`;
+        
         }   
 
         if (position=="W"){
 
-            info.innerHTML=("You sense a trap nearby, be careful !!! Your health is "+health+" . ")
+            info.innerHTML=(`You sense a trap nearby, be careful !!! Your health is ${health} . `)
             }
            
         if (position=="T"){
@@ -339,7 +298,7 @@ function clickHandler(dir)  {
                 damage=Dice(12)+12;
                 health=health-damage;
 
-                info.innerHTML=(" Watch out !! Its a trap !! You fell into the trap, you lose "+damage+" health. Your health is "+health+" .</br>");
+                info.innerHTML=(` Watch out !! Its a trap !! You fell into the trap, you lose "+damage+" health. Your health is ${health} .</br>`);
 
                 if (health<=0){
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
@@ -358,7 +317,7 @@ function clickHandler(dir)  {
             y= previousY
             gold=gold+100;
             info.innerHTML=("You found the mythical fountain of gold !! It seems everlasting !! ");
-            info.innerHTML+=("You gain 100 gold !! You have "+gold+" gold.")
+            info.innerHTML+=(`You gain 100 gold !! You have ${gold} gold.`)
         }
 
         if (position=="C"){
@@ -371,7 +330,7 @@ function clickHandler(dir)  {
                     if (treasure==false){    
                         gold=gold+800;
                         info.innerHTML=("You open the chest. ") 
-                        info.innerHTML+=("You gain 800 gold !! You have "+gold+" gold.")
+                        info.innerHTML+=(`You gain 800 gold !! You have ${gold} gold.`)
                         treasure=true;
                     } 
 
@@ -388,30 +347,19 @@ function clickHandler(dir)  {
         if (position=="O"){
             let event=Dice(6);
             if (event>4){
-                if (sword==false){
-                     damage=Dice(10)+2;
-                }
-             
-                else{
-                    damage=Dice(7)+1;
-                }
-             
+
+                sword===false ? damage=Dice(10)+2 :damage=Dice(7)+1;
+  
                 health=health-damage;
                 let randomMonster;
                 randomMonster= monsters[Math.floor(Math.random() * monsters.length)];
-                info.innerHTML=("A "+randomMonster+" attack you, you lose "+damage+" health. Your health is "+health+" .</br>");
-                info.innerHTML+=("You slay the "+randomMonster);
+                info.innerHTML=(`A ${randomMonster} attack you, you lose ${damage} health. Your health is ${health} .</br>`);
+                info.innerHTML+=(`You slay the ${randomMonster}`);
 
-                if (sword==true){
-                    info.innerHTML+=(" with your holy sword.");
-                }
+                sword===true ? info.innerHTML+=(" with your holy sword."): info.innerHTML+=(" with your rusty sword.");
 
-                else{
-                    info.innerHTML+=(" with your rusty sword.");
-                }
-               
                 if (health<=0){
-                    info.innerHTML=("A "+randomMonster+" delivers a deadly blow ")
+                    info.innerHTML=(`A ${randomMonster} delivers a deadly blow `)
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
                     game=false;
                 }
@@ -420,7 +368,7 @@ function clickHandler(dir)  {
             else{
                 let collect=Dice(10);
                 gold=gold+collect;
-                info.innerHTML+=("You find "+collect+" gold. You have "+gold+" gold.");
+                info.innerHTML+=(`You find ${collect} gold. You have ${gold} gold.`);
             } 
         }
 
