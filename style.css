@@ -57,6 +57,10 @@ button{
     margin-top: 90px; 
 }
 
+#positioning{
+    margin-left:15px;
+}
+
 #screen{
     background-color:White;
     color: White;
@@ -66,7 +70,7 @@ button{
 }
 
 #control{
-    top:450px;    
+    top:450px;  
 }
 
 #info{

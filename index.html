@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dungeon Crawl Online 1.08</title>
+    <title>Dungeon Crawl Online 1.10</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,36 +13,37 @@
 
     <header class="headContainer">                                    
     
-        <div class="headTitle"> Dungeon Crawl Online 1.09</div>
+        <div class="headTitle"> Dungeon Crawl Online 1.10</div>
 
     </header>
 
 
     <div id="interface">
+        <div id="positioning">
+            <div id="screen"></div>
+            <div id="info"></div>
+            <div id="control">
+                <div id="north">
+                <button onclick="clickHandler(1)">N</button>
+                </div>
 
-        <div id="screen"></div>
-        <div id="info"></div>
-        <div id="control">
-            <div id="north">
-            <button onclick="clickHandler(1)">N</button>
+                <div id="east">
+                    <button onclick="clickHandler(2)">E</button>
+                </div>
+
+                <div id="south">
+                    <button onclick="clickHandler(3)">S</button>
+                </div> 
+
+                <div id="west">
+                    <button onclick="clickHandler(4)">W</button>
+                </div>
+
+                <div id="music">
+                    <audio controls autoplay loop>
+                        <source src="music/theme.wav" type="audio/wav">
+                        </audio></div>
             </div>
-
-             <div id="east">
-                <button onclick="clickHandler(2)">E</button>
-            </div>
-
-             <div id="south">
-                <button onclick="clickHandler(3)">S</button>
-            </div> 
-
-             <div id="west">
-                <button onclick="clickHandler(4)">W</button>
-             </div>
-
-             <div id="music">
-                <audio controls autoplay loop>
-                    <source src="music/theme.wav" type="audio/wav">
-                    </audio></div>
 
         </div>
 
