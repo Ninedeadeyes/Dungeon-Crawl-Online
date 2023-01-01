@@ -7,6 +7,6 @@ If you would like to download the 'core' game engine to make your own games, you
 
 Play game at 
 
- https://ninedeadeyes.github.io/Dungeon-Crawl-Online/
+https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
  
  Music created using BeepBox
