@@ -5,7 +5,11 @@ I created a mini dungeon crawler where the main aim is to escape the dungeon wit
 
 If you would like to download the 'core' game engine to make your own games, you can download it from the game engine folder. 
 
-Play game at 
+Play the game at 
+
+https://ninedeadeyes.github.io/Dungeon-Crawl-Online/
+
+Check out my other games at
 
 https://ninedeadeyes.github.io/JavaScript-Mini-Arcade/
  
