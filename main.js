@@ -1,3 +1,11 @@
+let clickButtonNorth=document.querySelector("#clickNorth");
+let clickButtonEast=document.querySelector("#clickEast");
+let clickButtonSouth=document.querySelector("#clickSouth");
+let clickButtonWest=document.querySelector("#clickWest");
+
+const bkMusic = document.querySelector("#theme");
+let musicOn=false;
+
 let screen=document.querySelector("#screen");
 let info=document.querySelector("#info");
 let control=document.querySelector("#control");
@@ -10,8 +18,10 @@ let treasure=false;
 let exitKey=false;
 let sword=false;
 let damage;
-let monsters=["Goblin","Demon","Troll","Zombie","Ratling","Kobold","Golem","Ghoul"]
+let monsters=["Goblin","Demon","Troll","Zombie","Ratling","Kobold","Golem","Ghoul"];
+
 let modernFontColor=(str,color)=> '<span style="color: ' + color + '">' + str + '</span>';
+
 let wall=modernFontColor("X","Black")
 let player=modernFontColor("@","Red")
 let door=modernFontColor("D","Purple")
@@ -147,8 +157,19 @@ let displayMaps=(maps)=>{
     }
 }
 
+
+
+
+
 let clickHandler=(dir)=> {
+
     if (game==true){
+
+        if (!musicOn){
+            musicOn=true;
+            bkMusic.play();
+        }
+
         info.innerHTML=" " ;      //clear screen for info
         let previousX=x;          //  in case you hit into a wall
         let previousY=y;
@@ -176,6 +197,7 @@ let clickHandler=(dir)=> {
             let goblinQuestion=window.confirm("You see a sleeping Goblin. Do you wake him up ?");
 
             if (goblinQuestion==true){
+
                 if (exitKey==false){    
 
                     info.innerHTML=("He seems to be in a deep sleep but ") 
@@ -206,13 +228,11 @@ let clickHandler=(dir)=> {
             playerMapChoice[y][x] = kni;
             x= previousX
             y= previousY
-
             let knightQuestion=window.confirm("You see the corpse of a Knight. Do you investigate ?");
 
             if (knightQuestion==true){
 
                 if (sword==false){    
-
                     info.innerHTML=("You find a holy sword. ") 
                     sword=true;
                 } 
@@ -220,13 +240,14 @@ let clickHandler=(dir)=> {
                 else{
                 info.innerHTML=("You have already ransacked his corpse, shame !! ") 
                 }
+           
             }
 
             else{
                 info.innerHTML=(" You let the dead sleep.") 
             }
+        
         }
-
 
         if (position=="H"){
             playerMapChoice[y][x] = heal;
@@ -237,9 +258,11 @@ let clickHandler=(dir)=> {
                 health=90;
                 info.innerHTML=(`You find a fountain of healing, you recover most of your health. Your health is ${health} .`);
             }
+
             else{
                 info.innerHTML=(`You find a fountain of healing but you feel fine. Your health is ${health}.`);
             }
+        
         }
 
         if (position=="D"){
@@ -259,6 +282,7 @@ let clickHandler=(dir)=> {
                 x=4;
                 y=3;
             }
+        
         }
 
         if (position=="E"){
@@ -283,32 +307,30 @@ let clickHandler=(dir)=> {
             exitEvent=== 5 ?  info.innerHTML=("You are bleeding quite bad, can you stand another fight ?? You miss your family."):
             exitEvent=== 6 && (info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask."));
             info.innerHTML+=`Your health is ${health}..</br>`;
-        
         }   
 
         if (position=="W"){
-
             info.innerHTML=(`You sense a trap nearby, be careful !!! Your health is ${health} . `)
             }
            
         if (position=="T"){
-
             let event=Dice(6);
             if (event>1){
                 damage=Dice(12)+12;
                 health=health-damage;
-
                 info.innerHTML=(` Watch out !! Its a trap !! You fell into the trap, you lose "+damage+" health. Your health is ${health} .</br>`);
 
                 if (health<=0){
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
                     game=false;
                 }
+            
             }
 
             else{
                 info.innerHTML+=(" Watch out !! Its a trap !! You manage to evade the trap.");
             } 
+        
         }
 
         if (position=="F"){
@@ -337,15 +359,18 @@ let clickHandler=(dir)=> {
                     else{
                     info.innerHTML=("You have already opened the chest.") 
                     }
-            }
+        
+                }
 
             else{
                 info.innerHTML=("You leave the chest alone. ") 
             }
+        
         }
         
         if (position=="O"){
             let event=Dice(6);
+        
             if (event>4){
 
                 sword===false ? damage=Dice(10)+2 :damage=Dice(7)+1;
@@ -363,6 +388,7 @@ let clickHandler=(dir)=> {
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
                     game=false;
                 }
+        
             }
 
             else{
@@ -370,11 +396,29 @@ let clickHandler=(dir)=> {
                 gold=gold+collect;
                 info.innerHTML+=(`You find ${collect} gold. You have ${gold} gold.`);
             } 
+        
         }
 
        clearScreen();
     }
+
 }
 
+clickButtonNorth.addEventListener("click", ()=>{
+    clickHandler(1); 
+    });
+
+clickButtonEast.addEventListener("click", ()=>{
+    clickHandler(2); 
+    });
+
+clickButtonSouth.addEventListener("click", ()=>{
+    clickHandler(3); 
+    });
+
+clickButtonWest.addEventListener("click", ()=>{
+    clickHandler(4); 
+    });
+        
 clearScreen();  // intiate the screen at the start 
-info.innerHTML=("Defeat Monsters, collect gold and escape the dungeon.</br> Turn on the music and let the struggle begin..");
+info.innerHTML=("Defeat Monsters, collect gold and escape the dungeon.</br> Take your first step and let the struggle begin..");

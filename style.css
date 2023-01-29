@@ -85,28 +85,28 @@ button{
     border-radius: 2%;
 }
 
-#north{
+.north{
     top:80px;
     left:200px;
    
 }
 
-#east{
+.east{
     top:120px;
     left:260px;
 }
 
-#south{
+.south{
     top:160px;
     left:200px;
 }
 
-#west{
+.west{
     top:120px;
     left:140px;
 }
 
-#music{
+.music{
     top:210px;
     left:80px;
 }
