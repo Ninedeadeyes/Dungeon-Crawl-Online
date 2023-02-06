@@ -1,6 +1,6 @@
 
 body{
-    background-color:grey;
+    background-color:black;
 }
 
 div{
@@ -18,7 +18,8 @@ div{
 .headContainer{
     display:flex;
     position : fixed;   /*stays in the same place even if the page is scrolled */
-    background-color:rgb(29, 37, 37);/* rgb(173, 228, 223); */
+    background-color:black;
+    color: black;
     justify-content: center;   /*set the alignment of primary axis (x) */ 
     height: 80px;
     align-items:center;    /*set the alignment of secondary axis (y) */ 
@@ -62,8 +63,8 @@ button{
 }
 
 #screen{
-    background-color:White;
-    color: White;
+    background-color:black;
+    color: black;
     border-style: solid;   
     border-color:black; 
     margin-bottom: 0cm;
@@ -75,14 +76,15 @@ button{
 
 #info{
     top:420px;
-    background-color:white;
+    background-color:black;
+    color:white;
     margin:auto;
     width: 437px;
     height:100px;
     border-style: solid;   
-    border-color:black; 
+    border-color:white; 
     text-align: center; 
-    border-radius: 2%;
+    border-radius:25px;
 }
 
 .north{
