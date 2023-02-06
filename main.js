@@ -22,17 +22,18 @@ let monsters=["Goblin","Demon","Troll","Zombie","Ratling","Kobold","Golem","Ghou
 
 let modernFontColor=(str,color)=> '<span style="color: ' + color + '">' + str + '</span>';
 
-let wall=modernFontColor("X","Black")
-let player=modernFontColor("@","Red")
-let door=modernFontColor("D","Purple")
-let heal=modernFontColor("H","Blue")
-let mys=modernFontColor("?","Brown")
-let gob=modernFontColor("G","Green")
-let chest=modernFontColor("C","Orange")
-let mon=modernFontColor("M","Brown")
-let kni=modernFontColor("K","Grey")
-let exit=modernFontColor("E","Red")
-let hid=modernFontColor("F","Orange")
+let wall=modernFontColor("X","White");
+let player=modernFontColor("@","Red");
+let door=modernFontColor("D","Purple");
+let heal=modernFontColor("H","Blue");
+let mys=modernFontColor("?","Brown");
+let gob=modernFontColor("G","Green");
+let chest=modernFontColor("C","Yellow");
+let mon=modernFontColor("M","Brown");
+let kni=modernFontColor("K","Grey");
+let exit=modernFontColor("E","Red");
+let hid=modernFontColor("F","Yellow");
+let jester=modernFontColor("J","Orange");
 
  let dungeonMap1= [[wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall,wall],
                   [wall,"H","O","O","O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O","O",wall,"O","O","O","O",wall,"O","O","H",wall],
@@ -48,7 +49,7 @@ let hid=modernFontColor("F","Orange")
                   [wall,"O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O","O",wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O","H","O","O",wall,"O","O","O","O","O","H","O",wall],
                   [wall,"H","O","O",wall,"O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
-                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","J",wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O","O","O","O","O","O","O","O","O","O","O","H","O","O","O",wall,wall,wall,wall,wall,wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O","O",wall,"O","O","C",wall,"O","O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,wall,"O","H","O","O","O","O","O","O",wall,"O","O","G",wall],
@@ -74,7 +75,7 @@ let hid=modernFontColor("F","Orange")
                   [wall,"O","O","O",wall,"O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O","O",wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O",wall,"O","O","O","O","O","O","O",wall],
                   [wall,"O","O","O",wall,"O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
-                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",wall,"O","O","O",wall,"O","O","O",wall],
+                  [wall,"O","O","O",wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",mys,wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O","O","O","O","O","O","O","O","O","O","O","O","O","O","O",wall,wall,wall,wall,wall,wall,"O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,wall,wall,wall,wall,wall,wall,"O","O","O","O","O","O","O",wall,"O","O",mys,wall,"O","O","O","O",wall,"O","O","O",wall],
                   [wall,"O","O",wall,"O","O","O","O","O",wall,wall,wall,wall,wall,wall,wall,wall,wall,"O","O","O",wall,"O","O","O","O",wall,"O","O",mys,wall],
@@ -157,7 +158,22 @@ let displayMaps=(maps)=>{
     }
 }
 
+let getJoke = async () => {
+    try{
+        const jokeData= await fetch("https://icanhazdadjoke.com/",{
+            headers:{
+                "Accept":"application/json"
+            }
+        });
+    
+        const jokeObj=await jokeData.json();
+        info.innerHTML="Chained to the wall, the Mad Jester 'Krok' tells you a joke...."+(jokeObj.joke);
+    }
 
+    catch(e){
+        info.innerHTML="Chained to the wall, the Mad Jester 'Krok' has no jokes for you";
+    }
+}
 
 
 
@@ -184,15 +200,15 @@ let clickHandler=(dir)=> {
 
         if (position==wall){
             playerMapChoice[y][x] = wall;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
             info.innerHTML=("You walk into a wall.")
         }
 
         if (position=="G"){
             playerMapChoice[y][x] = gob;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
 
             let goblinQuestion=window.confirm("You see a sleeping Goblin. Do you wake him up ?");
 
@@ -217,17 +233,24 @@ let clickHandler=(dir)=> {
 
         if (position=="M"){
             playerMapChoice[y][x] = mon;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
             info.innerHTML=("You see a holy monk.. He provide you with some help")
             info.innerHTML+=(". 'There are healing fountains scatter across the dungeon, use them or you won't survive. ");
             info.innerHTML+=("I will give you a tip to find some. Search the corners of the dungeon.'");
         }
 
+        if (position=="J"){
+            playerMapChoice[y][x] = jester;
+            x= previousX;
+            y= previousY;
+            getJoke();   
+        }
+
         if (position=="K"){
             playerMapChoice[y][x] = kni;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
             let knightQuestion=window.confirm("You see the corpse of a Knight. Do you investigate ?");
 
             if (knightQuestion==true){
@@ -251,8 +274,8 @@ let clickHandler=(dir)=> {
 
         if (position=="H"){
             playerMapChoice[y][x] = heal;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
             if (health<90){
 
                 health=90;
@@ -267,8 +290,8 @@ let clickHandler=(dir)=> {
 
         if (position=="D"){
             playerMapChoice[y][x] = door ;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
 
             if (exitKey==false){
                 info.innerHTML=("The door is locked, find the key !!");
@@ -287,10 +310,10 @@ let clickHandler=(dir)=> {
 
         if (position=="E"){
             playerMapChoice[y][x] = exit ;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
 
-            info.innerHTML=(`At last you find the exit. You looted ${gold} Gold from the dungeon.`);
+            info.innerHTML=(`At last, you find the exit. You looted ${gold} Gold from the dungeon.`);
             gold>=1500 ? info.innerHTML+=("Wow..That is a lot of loot.You are an awesome dungeon crawler !!"):
             gold>700 && gold <1500 ? info.innerHTML+=("You did fairly well for a newbie :P You can do better !! "):
             gold<=700 &&  (info.innerHTML+=("Wow.. You were lucky to leave the dungeon alive. Maybe try fishing instead? "));
@@ -306,11 +329,11 @@ let clickHandler=(dir)=> {
             exitEvent=== 4 ?  info.innerHTML=("You wonder where did the boss go ? They are usually at the end of the dungeon. "):
             exitEvent=== 5 ?  info.innerHTML=("You are bleeding quite bad, can you stand another fight ?? You miss your family."):
             exitEvent=== 6 && (info.innerHTML=(" You sense something unholy up ahead. You put on your bravest mask."));
-            info.innerHTML+=`Your health is ${health}..</br>`;
+            info.innerHTML+=`Your health is ${health}`;
         }   
 
         if (position=="W"){
-            info.innerHTML=(`You sense a trap nearby, be careful !!! Your health is ${health} . `)
+            info.innerHTML=(`You sense a trap nearby, be careful !!! Your health is ${health}.`);
             }
            
         if (position=="T"){
@@ -335,35 +358,35 @@ let clickHandler=(dir)=> {
 
         if (position=="F"){
             playerMapChoice[y][x] =hid;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
             gold=gold+100;
-            info.innerHTML=("You found the mythical fountain of gold !! It seems everlasting !! ");
-            info.innerHTML+=(`You gain 100 gold !! You have ${gold} gold.`)
+            info.innerHTML=("You find the mythical fountain of gold !! It seems everlasting !! ");
+            info.innerHTML+=(`You gain 100 gold !! You have ${gold} gold.`);
         }
 
         if (position=="C"){
             playerMapChoice[y][x] = chest;
-            x= previousX
-            y= previousY
+            x= previousX;
+            y= previousY;
             let chestQuestion=window.confirm("You see a chest. Do you want to open it ?");
          
             if (chestQuestion==true){
                     if (treasure==false){    
                         gold=gold+800;
-                        info.innerHTML=("You open the chest. ") 
-                        info.innerHTML+=(`You gain 800 gold !! You have ${gold} gold.`)
+                        info.innerHTML=("You open the chest."); 
+                        info.innerHTML+=(`You gain 800 gold !! You have ${gold} gold.`);
                         treasure=true;
                     } 
 
                     else{
-                    info.innerHTML=("You have already opened the chest.") 
+                    info.innerHTML=("You have already opened the chest.");
                     }
         
                 }
 
             else{
-                info.innerHTML=("You leave the chest alone. ") 
+                info.innerHTML=("You leave the chest alone. "); 
             }
         
         }
@@ -384,7 +407,7 @@ let clickHandler=(dir)=> {
                 sword===true ? info.innerHTML+=(" with your holy sword."): info.innerHTML+=(" with your rusty sword.");
 
                 if (health<=0){
-                    info.innerHTML=(`A ${randomMonster} delivers a deadly blow `)
+                    info.innerHTML=(`A ${randomMonster} delivers a deadly blow `);
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");
                     game=false;
                 }
