@@ -401,7 +401,7 @@ let clickHandler=(dir)=> {
                 health=health-damage;
                 let randomMonster;
                 randomMonster= monsters[Math.floor(Math.random() * monsters.length)];
-                info.innerHTML=(`A ${randomMonster} attack you, you lose ${damage} health. Your health is ${health} .</br>`);
+                info.innerHTML=(`A ${randomMonster} attacks you, you lose ${damage} health. Your health is ${health} .</br>`);
                 info.innerHTML+=(`You slay the ${randomMonster}`);
 
                 sword===true ? info.innerHTML+=(" with your holy sword."): info.innerHTML+=(" with your rusty sword.");
