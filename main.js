@@ -35,7 +35,7 @@ let exit=modernFontColor("E","Red");
 let hid=modernFontColor("F","Yellow");
 let jester=modernFontColor("J","Orange");
 
- let dungeonMap1= [[wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal],
+ let dungeonMap1=[[wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal],
                   [wal,"H","O","O","O","O","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O",wal,"O","O","H",wal],
                   [wal,"O","O","O",wal,wal,wal,wal,"O",wal,"O","O","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O","O","O","O","O",wal],
                   [wal,"O","O","O",wal,"M","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","H","O",wal,"O","O","O","O","O","O","O","O",wal],
@@ -61,7 +61,7 @@ let jester=modernFontColor("J","Orange");
                   [wal,"H","O",wal,"O","O","O","O","O","O","O","O","O",wal,"O","O","O",wal,"O","O","O","O","O","O","O","O",wal,"O","O","D",wal],
                   [wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal]]
 
- let playerMap1=  [[wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal],
+ let playerMap1= [[wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal,wal],
                   [wal,"O","O","O","O","O","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O",wal,"O","O","O",wal],
                   [wal,"O","O","O",wal,wal,wal,wal,"O",wal,"O","O","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O","O","O","O","O",wal],
                   [wal,"O","@","O",wal,mys,"O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O","O",wal,"O","O","O","O","O","O","O","O",wal],
