@@ -202,7 +202,7 @@ let clickHandler=(dir)=> {
             playerMapChoice[y][x] = wal;
             x= previousX;
             y= previousY;
-            info.innerHTML=("You walk into a wal.")
+            info.innerHTML=("You walk into a wall.")
         }
 
         if (position=="G"){
