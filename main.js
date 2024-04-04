@@ -341,7 +341,7 @@ let clickHandler=(dir)=> {
             if (event>1){
                 damage=Dice(12)+12;
                 health=health-damage;
-                info.innerHTML=(` Watch out !! Its a trap !! You fell into the trap, you lose "+damage+" health. Your health is ${health} .</br>`);
+                info.innerHTML=(` Watch out !! Its a trap !! You fell into the trap, you lose ${damage} health. Your health is ${health} .</br>`);
 
                 if (health<=0){
                     info.innerHTML+=("</br>Wounds upon wounds you fall to the ground GAME OVER.");

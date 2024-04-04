@@ -75,16 +75,16 @@ button{
 }
 
 #info{
-    top:420px;
+    top:410px;
     background-color:black;
     color:white;
     margin:auto;
-    width: 437px;
-    height:100px;
+    width: 440px;
+    height:110px;
     border-style: solid;   
     border-color:white; 
     text-align: center; 
-    border-radius:25px;
+    border-radius:10px;
 }
 
 .north{
